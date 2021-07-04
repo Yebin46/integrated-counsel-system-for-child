@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap');
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+hr {
+    background: #A593E0;
+    height: 3px;
+}
+p {
+    font-weight: 500;
+    font-size: 18px;
+    color: #566270;
+}
+ul, li {
+    margin: 0; 
+    padding: 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: #566270;
+}
+input.underline {
+    border-bottom: 1px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+button.loginButton {
+    font-weight: 700;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #A593E0;
+    border: None;
+    border-radius: 50px;
+    width: 90px;
+    position: absolute;
+    left: 410px; top: 388px;
+}
+button.logoutButton {
+    font-weight: 700;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #A593E0;
+    border: None;
+    border-radius: 50px;
+    width: 100px;
+}
+button.loginButton:hover {
+    background-color: #fbd14b;;
+}
+button.logoutButton:hover {
+    background-color: #fbd14b;;
+}
+button.analysisLink {
+    font-weight: 500;
+    font-size: 18px;
+    color: #566270;
+    background-color: #ffffff;
+    border: None;
+    position: absolute;
+    left: 430px; top: 352px;
+}
+button.analysisLink:hover {
+    font-weight: 900;
+    color: #A593E0;
+}
+.mainTitle {
+    font-weight: 900;
+    font-size: 50px;
+    color: #A593E0;
+    position: absolute;
+    left: 750px; top: 400px;}
+.bubble {
+    width: 500px; height: 440px;
+    position: absolute;
+    left: 280px; top: 90px;
+}
+.loginName {
+    font-weight: 700;
+    font-size: 30px;
+    color: #566270;
+    position: absolute;
+    left: 468px; top: 160px;
+}
+.loginDetail {
+    font-weight: 700;
+    font-size: 18px;
+    color: #566270;
+}
+.greeting {
+    font-weight: 700;
+    font-size: 18px;
+    color: #566270;
+    position: absolute;
+    left: 455px; top: 130px;
+}
+.profile {
+    width: 95px; height: 95px;
+    position: absolute;
+    left: 460px; top: 180px;
+}
+.profileName {
+    font-weight: 700;
+    font-size: 25px;
+    color: #566270;
+    position: absolute;
+    left: 455px; top: 290px;
+}
+.arrow {
+    width: 25px; height: 25px;
+    position: absolute;
+    left: 415px; top: 352px;
+}
+.reportTitle {
+    font-weight: 900;
+    font-size: 40px;
+    color: #A593E0;
+    position: absolute;
+    left: 100px; top: 20px;
+}
+.reportDescription {
+    font-weight: 500;
+    font-size: 21px;
+    color: #566270;
+    position: absolute;
+    left: 100px; top: 90px;
+}
+.reportSubtitle {
+    font-weight: 700;
+    font-size: 25px;
+    color: #A593E0;
+}
+.emotionProfile {
+    width: 150px; height: 150px;
+    position: absolute;
+    left: 120px; top: 215px;
+}
+.comment {
+    position:absolute;
+    left: 300px; top: 215px
+}
+.graph {
+    width: 910px; height: 310px;
+    position: absolute;
+    left: -60px; top: 405px;
+    z-index:-100
+}

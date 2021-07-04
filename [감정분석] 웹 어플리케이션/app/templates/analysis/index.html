@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Speaker: Sentiment Analysis</title>
+    <link rel="stylesheet" href="../../static/style.css">
+</head>
+<body>
+    <div class = "reportTitle">감정 분석 리포트</div>
+    <div class = "reportDescription">{{ g.user.userName }} 친구의 심리 상담 감정 분석 결과는 아래와 같습니다.</div>
+    <div class = "reportSubtitle" style = "position:absolute; left:100px; top:155px;">오늘의 기분은 {{g.emotion}} 이네요!</div>
+    <hr style = "width: 320px; position:absolute; left:100px; top:185px;">
+    {% if g.emotion[0] == '공포' %}
+        <img src = '../../static/svg/fear.jpg' class = "emotionProfile">
+        <p class = "comment">
+            무섭고 위협이 되는 일을 겪어서 두려움을 느끼고 있나 봅니다.<br>
+            공포감은 다치고 싶지 않아서 자기를 보호하기 위해 느끼는 감정인 만큼, 현실을 더 객관적으로 바라보고 개선하는 데에 도움을 줄 수 있어요.<br>
+            {{ g.user.userName }}님께 공포를 주고 있는 대상이 실제로 삶에 큰 위협이 된다면 학교 선생님이나 상담센터에 도움을 요청해서 잘 해결해 나가면 좋겠어요.
+        </p>
+    {% elif g.emotion[0] == '놀람' %}
+        <img src = '../../static/svg/surprise.jpg' class = "emotionProfile">
+        <p class = "comment">
+            깜짝 놀랄 만한 일이 있었나 봐요.<br>
+            기쁜 일이면 아직까지 가슴이 뛰며 설렐 것이고, 슬프거나 화나는 일이면 감정이 고조되면서 힘이 들 수 있겠어요.<br>
+            오늘은 아무래도 기억에 오래 남을 수도 있을 것 같아요.
+        </p>
+    {% elif g.emotion[0] == '분노' %}
+        <img src = '../../static/svg/anger.jpg' class = "emotionProfile">
+        <p class = "comment">
+            무언가 신경을 건드려서 기분이 좋지 않고 짜증이 막 올라올 듯 하지요. 하고자 하는 일이 너무 까다롭거나 마음대로 움직여지지 않을 때 참 힘들어요.<br>
+            하지만 너무 화가 나고 긴장될 때는 오히려 해결책의 실마리가 잘 보이지 않을 때도 있어요.<br>
+            조금은 마음을 가다듬고 찬찬히 다시 생각해보는 것도 좋을 것 같아요.
+        </p>
+    {% elif g.emotion[0] == '슬픔' %}
+        <img src = '../../static/svg/sad.jpg' class = "emotionProfile">
+        <p class = "comment">
+            고민되고 걱정스러운 일이 {{ g.user.userName }}님을 많이 슬프게 만들었군요.<br>
+            실컷 울어버리고 싶은 마음이 들 때는 한번 울고 털어버리는 것도 하나의 방법이 될 수 있어요.<br>
+            자신의 감정을 솔직하게 받아들이고 자신을 위로하는 시간을 가져 보아요.
+        </p>
+    {% elif g.emotion[0] == '중립' %}
+        <img src = '../../static/svg/neutral.jpg' class = "emotionProfile">
+        <p class = "comment">
+            여러 감정들을 고르게 갖고 있는 상태이네요.<br>
+            마음이 평안하게 안정적일 수도 있고, 우리에게 서로 다른 감정이 동시에 찾아와, 나의 감정이 무엇인지 정확하게 파악하기 어려운 것 일수도 있어요. 
+        </p>
+    {% elif g.emotion[0] == '행복' %}
+        <img src = '../../static/svg/hapiness.jpg' class = "emotionProfile">
+        <p class = "comment">
+            행복한 일이 있어서 붕붕 날아다닐 것만 같은 기분이죠! 또는 기쁘고 행복한 감정이 마음속에 포근히 자리하고 있나요?<br>
+            이 감정은 머릿속 장기 저장소에 저장해두고 힘들 때나 슬플 때 마다 꺼내어 보는 것도 좋을 것 같네요.
+        </p>
+    {% else %}
+        <img src = '../../static/svg/disgust.jpg' class = "emotionProfile">
+        <p class = "comment">
+            누군가가 또는 무엇이 {{ g.user.userName }}님께 싫증과 짜증을 유발했을까요?<br>
+            이 감정을 느끼게 한 그 대상이 정말 밉고 야속하게 느껴질 것 같아요.<br>
+            하지만, 어쩌겠어요! 이 감정이 오래 지속되면 우리만 너무 힘들어지니 훌훌 털어버리고 우뚝 일어서 보아요. 
+        </p>
+    {% endif %}
+
+    <div class = "reportSubtitle" style = "position:absolute; left:100px; top:400px;">분석 그래프</div>
+    <hr style = "width: 140px; position:absolute; left:100px; top:430px;">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawBarColors);
+
+        function drawBarColors() {
+			var emotionList = {{emotionList}};
+            var data = google.visualization.arrayToDataTable([
+            ["감정", "감정세기", { role: "style" } ],
+            ["행복", 100*emotionList[5], "#fbd14b"],
+            ["중립", 100*emotionList[4], "#67D5B5"],
+            ["슬픔", 100*emotionList[3], "#84B1ED"],
+            ["분노", 100*emotionList[2], "#EE7785"],
+            ["공포", 100*emotionList[0], "#dedcee"],
+            ["놀람", 100*emotionList[1], "#f9cdad"],
+            ["혐오", 100*emotionList[6], "#566270"]
+        ]);
+
+        var options = {
+            chartArea: {width: '50%'}
+        };
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        }
+    </script>
+
+    <div id="chart_div" class='graph'></div>
+    
+</body>
+</html>

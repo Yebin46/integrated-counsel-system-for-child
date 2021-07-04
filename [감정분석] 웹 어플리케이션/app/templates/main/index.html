@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Speaker: Sentiment Analysis</title>
+    <link rel="stylesheet" href="../../static/style.css">
+</head>
+<body>
+    <img class = 'bubble' src='../../static/svg/bubble.svg'>
+    <div class = 'mainTitle'>아동 청소년을 위한<br>심리상담 스피커</div>
+    {% if g.user %}
+    <div class = 'greeting'>만나서 반가워!</div>
+    <img class = 'profile' src='../../static/svg/profile.svg'>
+    <div class = 'profileName'>{{ g.user.userName }} 친구</div>
+    <button type = 'button' onclick = "window.location.href='{{ url_for('analysis.index')}}';" class = 'analysisLink'>상담 분석하러가기</a>
+    <button type = 'button' onclick = "window.location.href='{{ url_for('main.logout') }}';" class = 'logoutButton' style = "position:absolute; left:460px; top:409px;">로그아웃</button> 
+    {% else %}
+    <div class = 'loginName'>Login</div>
+    <div class = 'loginDetail' style = "position:absolute; left:400px; top:255px;">Id</div>
+    <div class = 'loginDetail' style = "position:absolute; left:370px; top:310px;">password</div>
+    <form action = "/login/" method="post">
+        <input type = 'text' name = 'userId' class = 'underline' style = "position:absolute; left:480px; top:260px;">
+        <input type = 'password' name = 'password' class = 'underline' style = "position:absolute; left:480px; top:315px;">
+        <button type = 'submit' class = 'loginButton'>로그인</button>
+    </form>
+    <button class = 'logoutButton' style = "position:absolute; left:515px; top:388px;">회원가입</button>
+    {% endif %}
+</body>
+</html>
