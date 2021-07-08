@@ -29,10 +29,10 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 ### Sentiment Analysis Website
 웹 어플리케이션 형태로 내담자의 감정 분석 결과 레포트 제공
 #### Project stack
-   * Flask
-   * SQLite
-   * html/css
-   * pytorch
+> > Flask
+> > SQLite
+> > html/css
+> > pytorch
 #### Component Diagram
 
 ![component diagram](https://user-images.githubusercontent.com/58056141/124938738-8264b200-e043-11eb-891b-853ea74477d7.JPG)
