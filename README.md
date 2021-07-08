@@ -25,7 +25,7 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 ## Sentiment Analysis
 내담자의 음성과 텍스트를 사용해 감정을 분석 (multi-modal-transformer)
 
-**Sentiment Analysis Website**
+### Sentiment Analysis Website
 웹 어플리케이션 형태로 내담자의 감정 분석 결과 레포트 제공
 * Project stack
    * Flask
