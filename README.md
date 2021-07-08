@@ -2,7 +2,8 @@
 자연어처리, 음성합성, 감정분석을 활용한 아동청소년 심리상담 통합시스템 개발 프로젝트
 
 ## Project Diagram
-전체적인 프로그램 모식도
+
+![project diagram](https://user-images.githubusercontent.com/58056141/124941849-15065080-e046-11eb-88a2-ac56a929c277.JPG)
 
 ## Natural Language Processing
 자연어처리를 활용한 상담 답변 텍스트(.txt) 생성 (transformer)
