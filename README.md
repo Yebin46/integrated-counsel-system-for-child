@@ -25,6 +25,23 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 ## Sentiment Analysis
 내담자의 음성과 텍스트를 사용해 감정을 분석 (multi-modal-transformer)
 
+**Sentiment Analysis Website**
+웹 어플리케이션 형태로 내담자의 감정 분석 결과 레포트 제공
+* Project stack
+   * Flask
+   * SQLite
+   * html/css
+   * pytorch
+* Component Diagram
+![component diagram](https://user-images.githubusercontent.com/58056141/124938738-8264b200-e043-11eb-891b-853ea74477d7.JPG)
+
+* Gallery
+   * 초기 화면
+     ![main](https://user-images.githubusercontent.com/58056141/124940758-3581db00-e045-11eb-9035-a5ed0c5c13c3.JPG)
+   * 개인 프로필
+     ![profile](https://user-images.githubusercontent.com/58056141/124940795-3e72ac80-e045-11eb-91a6-8d1e70abfdd6.JPG)
+   * 감정 분석 레포트
+     ![report](https://user-images.githubusercontent.com/58056141/124940831-46cae780-e045-11eb-9ead-2ce4c54595c9.JPG)
 ### Based on
 * Transformer
     * 
@@ -32,4 +49,5 @@ python synthesizer.py --load_path CHECKPOINT_PATH
     * https://github.com/hccho2/Tacotron2-Wavenet-Korean-TTS
     * https://github.com/khw11044/Tacotron-in-colab
 * Multi-Modal-Transformer
-    * 
+    * https://github.com/youngbin-ro/audiotext-transformer
+    * https://github.com/Donghwa-KIM/audiotext-transformer
