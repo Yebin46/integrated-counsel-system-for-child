@@ -24,7 +24,7 @@
    (https://github.com/songys/Chatbot_data)
    
 
-## Transformer for local PC
+#### Transformer for local PC
 * 사용자의 음성이 라즈베리파이에서 STT된 결과(stt_result.txt)가 공유 폴더 내에 저장되면 자연어처리 모델의 Watchdog observer가 이벤트를 인식하여 Transformer의 input으로 들어가도록 구현
 * Transformer의 결과로 반환된 답변(answer.txt)을 공유폴더에 생성
 > 진행 방법
