@@ -22,8 +22,6 @@
    (https://aihub.or.kr/opendata/keti-data/recognition-laguage/KETI-02-006)
 * 'Chatbot_data'는 아래 링크에서 받으실 수 있습니다.
    (https://github.com/songys/Chatbot_data)
-   
-
 #### Transformer for local PC
 * 사용자의 음성이 라즈베리파이에서 STT된 결과(stt_result.txt)가 공유 폴더 내에 저장되면 자연어처리 모델의 Watchdog observer가 이벤트를 인식하여 Transformer의 input으로 들어가도록 구현
 * Transformer의 결과로 반환된 답변(answer.txt)을 공유폴더에 생성
@@ -36,14 +34,11 @@
 python test.py
 '''
 
-
-
-
 ## Voice Synthesis
 상담 답변 텍스트(.txt)를 음성(.wav)으로 합성 (multi-speaker-tacotron2)
 * iu 데이터셋은 저작권 때문에 공개하지 않습니다.
 * KSS 데이터셋은 아래 링크에서 받으실 수 있습니다.
-    * https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset
+    * https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset 
 > Tacotron for local PC code
 > > Google Colab에서 Tacotron2를 training한 후 checkpoint를 저장하여 local PC에서 사용.
 > > Watchdog를 활용해 Transformer의 output인 answer.txt가 업데이트되면 자동으로 음성 합성 모델의 input으로 들어가도록 구현 (synthesizer.py 참조)
@@ -57,7 +52,9 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 ## Sentiment Analysis
 내담자의 음성과 텍스트를 사용해 감정을 분석 (multi-modal-transformer)
 #### Dataset
-데이터셋은 총 4가지 열(idx, audio, sentence, emotion)로 구성된 pickle 파일 형식으로 전처리(이 때, audio는 pydub의 AudioSegment를 통해 1차원 벡터로 변환한 형태)
+데이터셋은 총 4가지 열(idx, audio, sentence, emotion)로 구성된 pickle 파일 형식으로 전처리
+
+(이 때, audio는 pydub의 AudioSegment를 통해 1차원 벡터로 변환한 형태)
 * '연기 영상 데이터 및 스크립트'은 아래 링크(AIhub)에서 받으실 수 있습니다. 
    (https://aihub.or.kr/opendata/keti-data/recognition-visual/KETI-01-001)
 * '발화 음성 및 감정 라벨링 데이터'는 아래 링크(AIhub)에서 받으실 수 있습니다. 
@@ -70,6 +67,10 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 * SQLite
 * html/css/js
 * pytorch
+> Multi-modal transformer for local PC code
+> > Multi-modal-transformer를 training한 후 checkpoint를 app/analysis/model에 저장하여 사용.
+> > 라즈베리파이가 내담자의 음성 파일을 bin 파일로 저장하면 wav 파일로 변환 후 1차원 벡터로 최종 변환 (analysis/index.py 참조)
+> > 내담자의 발화 음성을 텍스트로 변환하여 저장된 데이터를 1차원 벡터와 매핑하여 감정 분석 모델의 input으로 들어가도록 구현
 #### Component Diagram
 
 ![component diagram](https://user-images.githubusercontent.com/58056141/124938738-8264b200-e043-11eb-891b-853ea74477d7.JPG)
