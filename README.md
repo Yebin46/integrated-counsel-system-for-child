@@ -32,7 +32,6 @@
 > > 2. test.py에서 사용자에 맞게 경로 변경 : 
          RASP_DIR, WORK_DIR, DIRECTORY_WATCH(stt_result.txt 생성 경로) 
 > > 3. 터미널에서 아래 코드 실행
-
 '''
 python test.py
 '''
