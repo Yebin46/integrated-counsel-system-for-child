@@ -56,6 +56,12 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 
 ## Sentiment Analysis
 내담자의 음성과 텍스트를 사용해 감정을 분석 (multi-modal-transformer)
+#### Dataset
+데이터셋은 총 4가지 열(idx, audio, sentence, emotion)로 구성된 pickle 파일 형식으로 전처리(이 때, audio는 pydub의 AudioSegment를 통해 1차원 벡터로 변환한 형태)
+* '연기 영상 데이터 및 스크립트'은 아래 링크(AIhub)에서 받으실 수 있습니다. 
+   (https://aihub.or.kr/opendata/keti-data/recognition-visual/KETI-01-001)
+* '발화 음성 및 감정 라벨링 데이터'는 아래 링크(AIhub)에서 받으실 수 있습니다. 
+   (https://github.com/songys/Chatbot_data)
 
 ### Sentiment Analysis Website
 웹 어플리케이션 형태로 내담자의 감정 분석 결과 레포트 제공
