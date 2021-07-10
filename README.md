@@ -19,9 +19,9 @@
 심리상담 질문과 정신건강의학과 전문의 외 5명의 전문가 답변, 고민 Q&A 파트 질문과 여성가족부의 답변을 크롤링하여 사용
 * 네이버 지식 in 데이터셋은 저작권 때문에 공개하지 않습니다.
 * '웰니스 대화 스크립트 데이터셋'은 아래 링크(AIhub)에서 받으실 수 있습니다. 
-   (https://aihub.or.kr/opendata/keti-data/recognition-laguage/KETI-02-006)
+   * https://aihub.or.kr/opendata/keti-data/recognition-laguage/KETI-02-006
 * 'Chatbot_data'는 아래 링크에서 받으실 수 있습니다.
-   (https://github.com/songys/Chatbot_data)
+   * https://github.com/songys/Chatbot_data
 #### Transformer for local PC
 * 사용자의 음성이 라즈베리파이에서 STT된 결과(stt_result.txt)가 공유 폴더 내에 저장되면 자연어처리 모델의 Watchdog observer가 이벤트를 인식하여 Transformer의 input으로 들어가도록 구현
 * Transformer의 결과로 반환된 답변(answer.txt)을 공유폴더에 생성
@@ -56,9 +56,9 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 
 (이 때, audio는 pydub의 AudioSegment를 통해 1차원 벡터로 변환한 형태)
 * '연기 영상 데이터 및 스크립트'은 아래 링크(AIhub)에서 받으실 수 있습니다. 
-   (https://aihub.or.kr/opendata/keti-data/recognition-visual/KETI-01-001)
+   * https://aihub.or.kr/opendata/keti-data/recognition-visual/KETI-01-001
 * '발화 음성 및 감정 라벨링 데이터'는 아래 링크(AIhub)에서 받으실 수 있습니다. 
-   (https://github.com/songys/Chatbot_data)
+   * https://github.com/songys/Chatbot_data
 
 ### Sentiment Analysis Website
 웹 어플리케이션 형태로 내담자의 감정 분석 결과 레포트 제공
