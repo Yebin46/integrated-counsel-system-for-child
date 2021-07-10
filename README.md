@@ -69,6 +69,7 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 * pytorch
 > Multi-modal transformer for local PC code
 > > Multi-modal-transformer를 training한 후 checkpoint를 app/analysis/model에 저장하여 사용.
+> > 
 > > 라즈베리파이가 내담자의 음성 파일을 bin 파일로 저장하면 wav 파일로 변환 후 1차원 벡터로 최종 변환 (analysis/index.py 참조)
 > > > 내담자의 발화 음성을 텍스트로 변환하여 저장된 데이터를 1차원 벡터와 매핑하여 감정 분석 모델의 input으로 들어가도록 구현
 #### Component Diagram
