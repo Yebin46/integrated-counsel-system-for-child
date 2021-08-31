@@ -86,7 +86,7 @@ python synthesizer.py --load_path CHECKPOINT_PATH
 
 ### Based on
 * Transformer
-    * 
+    * https://wikidocs.net/31379
 * Multi-Speaker-Tacotron2
     * https://github.com/hccho2/Tacotron2-Wavenet-Korean-TTS
     * https://github.com/khw11044/Tacotron-in-colab
