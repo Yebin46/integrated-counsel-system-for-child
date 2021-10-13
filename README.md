@@ -30,9 +30,9 @@
 > > 2. test.py에서 사용자에 맞게 경로 변경 : 
          RASP_DIR, WORK_DIR, DIRECTORY_WATCH(stt_result.txt 생성 경로) 
 > > 3. 터미널에서 아래 코드 실행
-'''
+~~~
 python test.py
-'''
+~~~
 
 ## Voice Synthesis
 상담 답변 텍스트(.txt)를 음성(.wav)으로 합성 (multi-speaker-tacotron2)
@@ -45,9 +45,9 @@ python test.py
 > > > 진행 방법
 > > > 1. local PC에서 가상환경을 만들어 requirement.txt 설치
 > > > 2. checkpoint를 알맞은 PATH에 저장한 후 터미널에서 아래 코드 실행
-'''
+~~~
 python synthesizer.py --load_path CHECKPOINT_PATH
-'''
+~~~
 
 ## Sentiment Analysis
 내담자의 음성과 텍스트를 사용해 감정을 분석 (multi-modal-transformer)
